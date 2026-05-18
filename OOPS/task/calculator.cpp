@@ -19,9 +19,15 @@ void fileOperation(int a, int b, double result, string oper){
     file.open("Practice.txt", ios::app);
     
     if(file.is_open()){
+        // Log timestamp
+        cout << "[LOG] Operation recorded at: " << __DATE__ << " " << __TIME__ << endl;
+        
         file << "The actual operator is->  " << oper << endl;
         file << "The value of a: " << a << " and the value of b is: " << b << endl;
         file << "The result is: " << result << endl<<endl;
+    }
+    else{
+        cout << "[ERROR] Could not open file for writing!" << endl;
     }
     file.close();
 }
